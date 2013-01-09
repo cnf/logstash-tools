@@ -2,7 +2,8 @@ module KibanaConfig
 
   # Change which fields are shown by default. Must be set as an array
   # Default_fields = ['@fields.vhost','@fields.response','@fields.request']
-  # Just an example. This really makes kibana look much better for your 
+  #
+  # Just an example. This really makes kibana look much better for your
   # own usage
   Default_fields = ['@type', '@fields.message']
 
