@@ -24,11 +24,11 @@
                    }
               },
               "@message": { "type": "string", "index": "analyzed" },
-              "@source": { "type": "string", "index": "not_analyzed" },
-              "@source_host": { "type": "string", "index": "not_analyzed" },
-              "@source_path": { "type": "string", "index": "not_analyzed" },
+              "@source": { "type": "string", "index": "analyzed" },
+              "@source_host": { "type": "string", "index": "analyzed" },
+              "@source_path": { "type": "string", "index": "analyzed" },
               "@tags": { "type": "string", "index": "analyzed" },
-              "@timestamp": { "type": "string", "index": "analyzed" },
+              "@timestamp": { "type": "date", "index": "analyzed" },
               "@type": { "type": "string", "index": "not_analyzed" }
            }
         }
