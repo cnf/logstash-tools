@@ -21,6 +21,9 @@ PERFORMANCE OF THIS SOFTWARE.
 from datetime import datetime, timedelta
 import urllib
 import urllib2
+
+from urllib2 import HTTPError
+
 import json
 import sys
 
@@ -41,8 +44,12 @@ query = urllib.urlencode({'q': "@timestamp:[{offset}+01 TO *]".format(
     offset=offset)})
 url = "http://127.0.0.1:9200/logstash-{today}/_count?".format(today=today)
 
-result = urllib2.urlopen(url + query).read()
+try:
+    result = urllib2.urlopen(url + query).read()
+    arr = json.loads(result)
+except HTTPError as e:
+    arr = { 'count': 0 }
 
-arr = json.loads(result)
+
 
 print arr['count']
